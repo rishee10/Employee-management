@@ -1,14 +1,14 @@
 # Employee Management System
 
-Web application for administrators to manage employee records with full CRUD, search, filters, and pagination.
+Web application to manage employee records with full CRUD, search, filters, and pagination.
 
-**Stack:** Java 17, Spring Boot 3, Spring Data JPA, PostgreSQL (production) / H2 (local default), HTML + CSS + Bootstrap 5.
+**Stack:** Java 17, Spring Boot 3, Spring Data JPA, PostgreSQL (production), HTML + CSS + Bootstrap.
 
 ## Prerequisites
 
 - JDK 17+
 - Maven 3.9+
-- (Optional) Docker Desktop for PostgreSQL + containerized app
+- Docker Desktop for PostgreSQL + containerized app (Optional we can also do quick start to check)
 
 ## Quick start (H2 in-memory — no database install)
 
@@ -19,7 +19,7 @@ mvn spring-boot:run
 
 Open [http://localhost:8080](http://localhost:8080)
 
-Sample employees are loaded from `src/main/resources/data.sql`.
+Sample employees are loaded for tests from `src/main/resources/data.sql`.
 
 Run unit tests:
 
@@ -44,7 +44,7 @@ Environment variables (defaults shown):
 | `DB_PORT` | `5432` |
 | `DB_NAME` | `employee_db` |
 | `DB_USER` | `employee_user` |
-| `DB_PASSWORD` | `employee_pass` |
+| `DB_PASSWORD` | `your_password` |
 
 ## Docker Compose (PostgreSQL + app)
 
@@ -65,9 +65,8 @@ App: [http://localhost:8080](http://localhost:8080)
 | Filters | Department, employment status |
 | Pagination | `page`, `size` query params |
 | Delete confirmation | Bootstrap modal on list page |
-| Unit tests | `EmployeeServiceTest` (JUnit 5 + Mockito) |
-| API docs | `docs/API-SAMPLES.md`, `postman/Employee-Management.postman_collection.json` |
-| Bonus | CSV export (`GET /api/employees/export`), Docker Compose |
+| Unit tests | `EmployeeServiceTest` (JUnit) |
+| Bonus | CSV export (`GET /api/employees/export`), Docker Compose | (Download all employees details)
 
 ## UI pages
 
@@ -100,7 +99,7 @@ employee-management/
 │   ├── repository/
 │   ├── model/
 │   └── dto/
-├── src/main/resources/static/    # Bootstrap frontend
+├── src/main/resources/static/    # frontend partt
 ├── src/test/java/                # Service unit tests
 ├── database/init-postgres.sql
 ├── postman/
@@ -108,18 +107,14 @@ employee-management/
 └── Dockerfile
 ```
 
-## Demonstration / screenshots
+## screenshots
+<img width="1917" height="977" alt="Screenshot 2026-10-15 193436" src="https://github.com/user-attachments/assets/0316ebbd-6d00-4fbd-81b3-3eb8adb388a8" />
 
-For submission, capture:
+<img width="1917" height="962" alt="Screenshot 2026-10-15 193536" src="https://github.com/user-attachments/assets/36fc6118-d217-4fec-b24a-2ab00405a04d" />
 
-1. Employee list with search/filters and pagination
-2. Add employee form
-3. Employee details page
-4. Delete confirmation modal
-5. (Optional) Postman response for `GET /api/employees`
+<img width="1917" height="968" alt="Screenshot 2026-10-15 193500" src="https://github.com/user-attachments/assets/f0f9b9ba-f817-44f3-ab9d-aaf3cc7a5ee3" />
 
-See `docs/DEMO.md` for a short recording checklist.
 
-## License
 
-Kloudspot India Private Limited — candidate technical assessment.
+
+
