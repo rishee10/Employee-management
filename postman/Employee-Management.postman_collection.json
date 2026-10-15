@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "Employee Management API",
+    "description": "Kloudspot EMS REST collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "employeeId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "List employees (paginated)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/employees?page=0&size=10&search=&department=&status="
+      }
+    },
+    {
+      "name": "Get employee by id",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/employees/{{employeeId}}"
+      }
+    },
+    {
+      "name": "Create employee",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeId\": \"EMP2025-100\",\n  \"fullName\": \"Test User\",\n  \"email\": \"test.user@kloudspot.com\",\n  \"phoneNumber\": \"+91-9000000000\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Developer\",\n  \"dateOfJoining\": \"2025-01-10\",\n  \"salary\": 600000,\n  \"employmentStatus\": \"ACTIVE\"\n}"
+        },
+        "url": "{{baseUrl}}/api/employees"
+      }
+    },
+    {
+      "name": "Update employee",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeId\": \"EMP2025-100\",\n  \"fullName\": \"Test User Updated\",\n  \"email\": \"test.user@kloudspot.com\",\n  \"phoneNumber\": \"+91-9000000000\",\n  \"department\": \"Engineering\",\n  \"designation\": \"Senior Developer\",\n  \"dateOfJoining\": \"2025-01-10\",\n  \"salary\": 750000,\n  \"employmentStatus\": \"ACTIVE\"\n}"
+        },
+        "url": "{{baseUrl}}/api/employees/{{employeeId}}"
+      }
+    },
+    {
+      "name": "Delete employee",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/employees/{{employeeId}}"
+      }
+    },
+    {
+      "name": "List departments",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/employees/departments"
+      }
+    },
+    {
+      "name": "Export CSV",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/employees/export?search=&department=&status="
+      }
+    }
+  ]
+}

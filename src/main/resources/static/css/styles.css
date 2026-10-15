@@ -1,0 +1,32 @@
+:root {
+  --brand: #0d6efd;
+  --muted: #6c757d;
+}
+
+body {
+  background-color: #f4f6f9;
+}
+
+.page-header {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+}
+
+.status-badge-active {
+  background-color: #198754;
+}
+
+.status-badge-inactive {
+  background-color: #6c757d;
+}
+
+.table-actions .btn {
+  margin-right: 0.25rem;
+}
+
+.empty-state {
+  color: var(--muted);
+  padding: 2rem;
+  text-align: center;
+}
